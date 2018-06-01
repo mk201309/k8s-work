@@ -20,3 +20,10 @@ spec:
       limits:
         memory: "100Mi"
         cpu: "200m"
+    volumeMounts:
+      - name: nginx-default
+        mountPath: /etc/nginx/conf.d/
+  volumes:
+    - name: nginx-default
+      configMap: 
+        name:  pod3-nginx-config
